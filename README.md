@@ -8,6 +8,8 @@ You must use Symfony 2 to fulfil the brief.
 
 Once you've finished, make a pull request so that we can see your code.
 
+The deadline for your pull request is midnight on Friday 26th July 2013.
+
 Good Luck!
 
 Brief

@@ -21,4 +21,4 @@ You must satisfy the following stories
 
 To help you out we have designed the ORM for you which can be found below.
 
-![alt text](https://github.com/fishrod-interactive/candidatetest/blob/master/brief/orm.png "ORM Design")
+![alt text](https://raw.github.com/fishrod-interactive/candidatetest/master/brief/orm.png "ORM Design")

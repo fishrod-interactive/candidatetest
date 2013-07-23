@@ -10,11 +10,22 @@ Once you've finished, make a pull request so that we can see your code.
 
 The deadline for your pull request is midnight on Friday 26th July 2013.
 
+Here are a few links to help you out
+
+- [Symfony 2 Website](http://symfony.com/)
+- [Symfony 2 Documentation](http://symfony.com/doc/current/index.html)
+- [Symfony 2 Quick Tour](http://symfony.com/doc/current/quick_tour/the_big_picture.html)
+- [Doctrine/Symfony 2 Databases](http://symfony.com/doc/current/book/doctrine.html)
+- [Symfony 2 Controllers](http://symfony.com/doc/current/book/controller.html)
+- [Symfony 2 Routing](http://symfony.com/doc/current/book/routing.html)
+- [Symfony 2 Templating](http://symfony.com/doc/current/book/templating.html)
+- [Symfony 2 Forms](http://symfony.com/doc/current/book/forms.html)
+
 Good Luck!
 
 Brief
 -----
-You must create a wedding guestbook using Symfony 2 with a backend management system to allow administrators to add/delete weddings and guestbook entries.
+You must create a wedding guestbook using Symfony 2 and Doctrine ORM with a backend management system to allow administrators to add/delete weddings and guestbook entries.
 
 You must satisfy the following stories
 - As the bride and groom, I must have a personalised link to send to my guests where they can sign my guestbook

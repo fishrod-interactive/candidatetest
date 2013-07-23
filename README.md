@@ -1,4 +1,4 @@
-candidatetest
-=============
+Fishrod Interactive: Candidate Test
+===================================
 
-Read the README.md file which contains the brief for this test
+You must create a Symfony2 application 

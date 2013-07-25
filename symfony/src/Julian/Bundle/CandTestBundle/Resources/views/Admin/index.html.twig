@@ -1,0 +1,7 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <p>Here to do admin type things? Please select from one of the options below</p>
+    <div class="link_item"><a href="{{ url('new_wedding') }}">Create a new wedding</a></div>
+    <div class="link_item"><a href="{{ url('list_weddings') }}">View all weddings</a></div>
+{% endblock %}

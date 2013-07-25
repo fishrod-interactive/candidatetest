@@ -3,6 +3,7 @@
 namespace Julian\Bundle\CandTestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Wedding
@@ -25,6 +26,7 @@ class Wedding
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -32,6 +34,7 @@ class Wedding
      * @var string
      *
      * @ORM\Column(name="address", type="text")
+     * @Assert\NotBlank()
      */
     private $address;
 

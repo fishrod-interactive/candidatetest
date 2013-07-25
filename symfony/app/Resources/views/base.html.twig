@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Wedding Guestbook{% endblock %}</title>
+        <style type="text/css">
+
+            body{ 
+                background-color: #ddcc88;
+                font-size: 16px; 
+                margin: 0; 
+                padding: 0; 
+            }
+
+            #header{ 
+                background-color: #333333;
+                height: 100px;
+            }
+
+            #topbar{ 
+                background-color:#ddcc88;
+                width: 100%; 
+                height: 50px;
+            }
+
+            #content { 
+                background-color: #eeeecc; 
+                min-height: 600px; /* for modern browsers */
+                height:auto !important; /* for modern browsers */
+                height: 600px; /* for IE5.x and IE6 */
+            }
+
+            #footer { 
+                clear:both;
+                background-color: #333333;
+                height: 100px;
+            }
+
+            #top_banner {
+                font-size: 40px;
+                text-align: center;
+                color: #eeeecc;
+            }
+
+            .flash-notice {
+                color: #ffffff;
+            }
+
+        </style>
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div id="header">
+            {% block header %}<div id="top_banner">Wedding Guestbook</div>{% endblock %}
+        </div>
+
+        <div id="topbar">
+            {% block topbar %}  
+                <div id="link_item"><a href="{{ url('homepage') }}">Home</a></div>
+                <div id="link_item"><a href="{{ url('admin') }}">Admin</a></div>
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <div id="footer">
+            {% block footer %}
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+                    <div class="flash-notice">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+            {% endblock %}
+        </div>
     </body>
 </html>

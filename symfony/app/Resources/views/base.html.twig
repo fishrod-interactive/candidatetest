@@ -1,52 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{% block title %}Wedding Guestbook{% endblock %}</title>
-        <style type="text/css">
+        {% block css %}
+            {% stylesheets '../app/Resources/css/base.css' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            {% stylesheets '../app/Resources/css/guestbook.css' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
 
-            body{ 
-                background-color: #ddcc88;
-                font-size: 16px; 
-                margin: 0; 
-                padding: 0; 
-            }
-
-            #header{ 
-                background-color: #333333;
-                height: 100px;
-            }
-
-            #topbar{ 
-                background-color:#ddcc88;
-                width: 100%; 
-                height: 50px;
-            }
-
-            #content { 
-                background-color: #eeeecc; 
-                min-height: 600px; /* for modern browsers */
-                height:auto !important; /* for modern browsers */
-                height: 600px; /* for IE5.x and IE6 */
-            }
-
-            #footer { 
-                clear:both;
-                background-color: #333333;
-                height: 100px;
-            }
-
-            #top_banner {
-                font-size: 40px;
-                text-align: center;
-                color: #eeeecc;
-            }
-
-            .flash-notice {
-                color: #ffffff;
-            }
-
-        </style>
     </head>
     <body>
         <div id="header">
@@ -55,8 +21,8 @@
 
         <div id="topbar">
             {% block topbar %}  
-                <div id="link_item"><a href="{{ url('homepage') }}">Home</a></div>
-                <div id="link_item"><a href="{{ url('admin') }}">Admin</a></div>
+                <div class="link_item"><a href="{{ url('homepage') }}">Home</a></div>
+                <div class="link_item"><a href="{{ url('admin') }}">Admin</a></div>
             {% endblock %}
         </div>
 

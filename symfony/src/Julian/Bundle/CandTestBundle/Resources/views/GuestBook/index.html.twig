@@ -1,5 +1,16 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-    <p>Hello to the wedding guest book! Let's Party!</p>
+    <div id="leftColumn">
+    {{ include(
+            'JulianCandTestBundle:GuestBook:leftColumn.html.twig',
+            { 'form': form }
+        ) }}
+    </div>
+    <div id="rightColumn">
+    {{ include(
+            'JulianCandTestBundle:GuestBook:rightColumn.html.twig',
+            { 'guests': guests }
+        ) }}
+    </div>
 {% endblock %}

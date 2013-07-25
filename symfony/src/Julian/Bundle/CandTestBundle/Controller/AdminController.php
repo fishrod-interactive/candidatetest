@@ -57,7 +57,7 @@ class AdminController extends Controller
             'notice',
             'Wedding created successfully!'
         );
-    	return $this->redirect($this->generateUrl('admin'));
+    	return $this->redirect($this->generateUrl('list_weddings'));
     }
 
     private function createSlug()
@@ -110,7 +110,7 @@ class AdminController extends Controller
 
             $this->get('session')->getFlashBag()->add(
                 'notice',
-                'Wedding created successfully!'
+                'Wedding updated successfully!'
             );
         return $this->redirect($this->generateUrl('list_weddings'));
         }

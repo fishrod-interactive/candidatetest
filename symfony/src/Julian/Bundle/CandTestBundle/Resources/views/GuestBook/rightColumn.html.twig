@@ -1,0 +1,12 @@
+<table>
+{% for guest in guests %}
+    <tr>
+    	<td rowspan="2"><div class="photo"><img src="{{ asset('uploads/' ~ guest.photo) }}" alt="guest photo" /></div></td>
+    	<td>{{ guest.name }}</td>
+    	<td rowspan="2">{{ guest.message }}</td>
+    </tr>
+    <tr>
+    	<td>{{ guest.created|date('Y-m-d H:i:s') }}</td>
+    </tr>	
+{% endfor %}
+</table>

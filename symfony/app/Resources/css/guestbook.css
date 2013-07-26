@@ -1,17 +1,36 @@
 #leftColumn {
 	float: left;
+	width: 50%;
 }
 
 #rightColumn {
 	float: right;
+	width: 50%;
 }
 
 .photo {
 	height: 50px;
 	width: 50px;
+	margin-right: 10px;
 }
 
 img {
 	max-width: 100%;
 	max-height: 100%;
+}
+
+.message {
+	margin-left: 10px;
+}
+
+.created {
+	font-size: 80%;
+}
+
+.name {
+	font-size: 110%;
+}
+
+.guestForm {
+	padding-left: 20px;
 }

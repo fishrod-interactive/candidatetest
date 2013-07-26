@@ -21,6 +21,7 @@ class AdminController extends Controller
     /**
      *
      * Action to handle the creation of new Weddings via a form
+     * @param Request $request
      *
      */
     public function newAction(Request $request)
@@ -51,6 +52,11 @@ class AdminController extends Controller
     	));
     }
 
+    /**
+     *
+     * Action to handle the successful creation of a wedding
+     *
+     */
     public function formSuccessAction()
     {
         $this->get('session')->getFlashBag()->add(
@@ -60,6 +66,10 @@ class AdminController extends Controller
     	return $this->redirect($this->generateUrl('list_weddings'));
     }
 
+    /**
+     *
+     * function to create the slug for the wedding link
+     */
     private function createSlug()
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
@@ -70,6 +80,11 @@ class AdminController extends Controller
         return time() . $randomString;
     }
 
+    /**
+     *
+     * Action to list all weddings
+     *
+     */
     public function listAction()
     {
         $repository = $this->getDoctrine()
@@ -82,6 +97,12 @@ class AdminController extends Controller
         ));
     }
 
+    /**
+     *
+     * Action to handle the updating of a wedding via a form
+     * @param string $id
+     *
+     */
     public function updateAction($id)
     {
         $em = $this->getDoctrine()->getManager();

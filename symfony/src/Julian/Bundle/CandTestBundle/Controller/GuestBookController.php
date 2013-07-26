@@ -10,6 +10,13 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class GuestBookController extends Controller
 {
+    /**
+     *
+     * Action to handle landing page for guestbook
+     * Allows creation and viewing of messages for specified wedding
+     * @param string $slug
+     *
+     */
     public function indexAction($slug)
     {
         $em = $this->getDoctrine()->getManager();
@@ -54,10 +61,12 @@ class GuestBookController extends Controller
                 'notice',
                 'Guest message added successfully!'
             );
-            return $this->redirect($this->generateUrl('task_success'));
+            return $this->redirect($this->generateUrl('guestbook',array('slug' => $slug)));
         }
 
         return $this->render('JulianCandTestBundle:GuestBook:index.html.twig', array('form' => $form->createView(), 'wedding' => $wedding[0], 'guests' => $existingGuests));
     }
+
+
 
 }

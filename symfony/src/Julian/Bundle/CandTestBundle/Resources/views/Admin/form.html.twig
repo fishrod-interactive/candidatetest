@@ -1,11 +1,16 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-    {{ form_start(form) }}
-        {{ form_errors(form) }}
+	<div class="weddingForm">
+	    {{ form_start(form) }}
+	        {{ form_errors(form) }}
 
-        {{ form_row(form.name) }}
-        {{ form_row(form.address) }}
+	        {{ form_label(form.name) }}<br />
+		    {{ form_widget(form.name) }}{{ form_errors(form.name) }}<br /><br />
 
-    {{ form_end(form) }}
+		    {{ form_label(form.address) }}<br /> 
+		    {{ form_widget(form.address) }}{{ form_errors(form.address) }}<br /><br />
+
+	    {{ form_end(form) }}
+    </div>
 {% endblock %}

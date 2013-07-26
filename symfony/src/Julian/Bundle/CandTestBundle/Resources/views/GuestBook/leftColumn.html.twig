@@ -1,0 +1,17 @@
+
+<div class="guestForm">
+	<p>Fill in the form below to submit a new message</p> 
+	{{ form_start(form) }}
+	    {{ form_errors(form) }}
+
+	    {{ form_label(form.name) }}<br />
+	    {{ form_widget(form.name) }}{{ form_errors(form.name) }}<br /><br />
+
+	    {{ form_label(form.message) }}<br /> 
+	    {{ form_widget(form.message) }}{{ form_errors(form.message) }}<br /><br />
+	 
+	    {{ form_label(form.photo) }}<br />
+	    {{ form_widget(form.photo) }}{{ form_errors(form.photo) }}<br /><br />
+
+	{{ form_end(form) }}
+</div>

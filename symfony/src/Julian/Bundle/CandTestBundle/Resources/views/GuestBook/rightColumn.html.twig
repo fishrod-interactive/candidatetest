@@ -1,0 +1,19 @@
+
+{% if guests %}
+	<p>Below are all the messages submitted for this wedding</p>
+	<table>
+	{% for guest in guests %}
+	    <tr>
+	    	<td rowspan="2"><div class="photo"><img src="{{ asset('uploads/' ~ guest.photo) }}" alt="guest photo" /></div></td>
+	    	<td><div class="name">{{ guest.name }}</div></td>
+	    	<td rowspan="2"><div class="message">{{ guest.message }}</div></td>
+	    </tr>
+	    <tr>
+	    	<td><div class="created">{{ guest.created|date('Y-m-d H:i:s') }}</div></td>
+	    </tr>
+	{% endfor %}
+	</table>
+
+{% else %}
+	<p>Be the first to add a message!</p>
+{% endif %}

@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <table>
+    	<tr><th>ID</th><th>Name</th><th>Address</th><th>link</th></tr>
+    	{% for wedding in weddings %}
+    	    <tr>
+    	    	<td>{{ wedding.id }}</td>
+    	    	<td>{{ wedding.name }}</td>
+    	    	<td>{{ wedding.address }}</td>
+    	    	<td><a href="{{ url('guestbook', {'slug': wedding.slug}) }}">/guestbook/{{ wedding.slug }}</td>
+    	    	<td><a href="{{ url('edit_wedding', {'id': wedding.id}) }}">Edit</a></td>
+    	    </tr>
+    	{% endfor %}
+    </table>
+{% endblock %}

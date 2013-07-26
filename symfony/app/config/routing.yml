@@ -1,0 +1,4 @@
+julian_cand_test:
+    resource: "@JulianCandTestBundle/Resources/config/routing.yml"
+    prefix:   /
+

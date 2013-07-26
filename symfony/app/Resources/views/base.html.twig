@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% block title %}Wedding Guestbook{% endblock %}</title>
+        {% block css %}
+            {% stylesheets '../app/Resources/css/base.css' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            {% stylesheets '../app/Resources/css/guestbook.css' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            {% stylesheets '../app/Resources/css/admin.css' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+
+    </head>
+    <body>
+        <div id="header">
+            {% block header %}<div id="top_banner">Wedding Guestbook</div>{% endblock %}
+        </div>
+
+        <div id="topbar">
+            {% block topbar %}  
+                <div class="link_item"><a href="{{ url('homepage') }}">Home</a></div>
+                <div class="link_item"><a href="{{ url('admin') }}">Admin</a></div>
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <div id="footer">
+            {% block footer %}
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+                    <div class="flash-notice">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

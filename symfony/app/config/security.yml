@@ -1,0 +1,19 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    firewalls:
+        secured_area:
+            pattern: ^/
+            anonymous: ~
+            http_basic:
+                realm: "Secured Admin Area"
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN}
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    admin: { password: lollypop, roles: [ 'ROLE_ADMIN' ] }

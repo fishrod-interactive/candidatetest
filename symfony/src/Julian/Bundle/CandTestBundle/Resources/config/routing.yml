@@ -1,0 +1,27 @@
+homepage:
+    pattern:  /home/
+    defaults: { _controller: JulianCandTestBundle:Home:index }
+
+admin:
+    pattern: /admin/
+    defaults: { _controller: JulianCandTestBundle:Admin:index }
+
+new_wedding:
+    pattern: /admin/new
+    defaults: { _controller: JulianCandTestBundle:Admin:new }
+
+task_success:
+    pattern: /admin/task_success
+    defaults: { _controller: JulianCandTestBundle:Admin:formSuccess }
+
+guestbook:
+    pattern: /guestbook/{slug}
+    defaults: { _controller: JulianCandTestBundle:GuestBook:index }
+
+list_weddings:
+    pattern: /admin/list_weddings
+    defaults: { _controller: JulianCandTestBundle:Admin:list }
+
+edit_wedding:
+    pattern: /admin/edit/{id}
+    defaults: { _controller: JulianCandTestBundle:Admin:update }

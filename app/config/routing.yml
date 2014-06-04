@@ -1,0 +1,5 @@
+wedding_guest_book:
+    resource: "@WeddingGuestBookBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

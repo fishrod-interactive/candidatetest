@@ -1,0 +1,10 @@
+wedding_admin:
+    resource: "@WeddingAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+wedding_guest_book:
+    resource: "@WeddingGuestBookBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

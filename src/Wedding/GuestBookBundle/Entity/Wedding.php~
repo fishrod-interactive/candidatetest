@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Wedding
  *
- * @ORM\Table(name="wedding")
+ * @ORM\Table()
  * @ORM\Entity
  */
 class Wedding
@@ -38,7 +38,7 @@ class Wedding
     /**
      * @var string
      *
-     * @ORM\Column(name="slug", type="string", length=50, unique=true)
+     * @ORM\Column(name="slug", type="string", length=50)
      */
     private $slug;
 

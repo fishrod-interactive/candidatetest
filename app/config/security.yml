@@ -1,12 +1,32 @@
 security:
+    encoders:
+        Wedding\AdminBundle\Entity\User:
+            algorithm: bcrypt
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH ]
+
     providers:
-        in_memory:
-            memory: ~
+        administrators:
+            entity: { class: WeddingAdminBundle:User }
 
     firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        default:
+        admin_area:
+            pattern:    ^/
             anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login_check
+            logout:
+                path:   /logout
+                target: /
+
+    access_control:
+        - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: ^/admin/, roles: ROLE_ADMIN }
+        - { path: ^/admin$, roles: ROLE_ADMIN }
+        - { path: ^/admin/adduser/, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/admin/adduser$, roles: ROLE_SUPER_ADMIN }
+

@@ -130,9 +130,9 @@ class Guest
      * @param \DateTime $created
      * @return Guest
      */
-    public function setCreated($created)
+    public function setCreated()
     {
-        $this->created = $created;
+        $this->created = new \DateTime("now");
 
         return $this;
     }

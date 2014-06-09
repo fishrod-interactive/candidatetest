@@ -16,3 +16,37 @@ _main:
 index:
     pattern:   /
     defaults:  { _controller: WeddingGuestBookBundle:Default:index }
+    
+wedding:
+    pattern:   /wedding/{slug}
+    defaults:  { _controller: WeddingGuestBookBundle:Default:wedding }
+    
+addentry:
+    pattern:   /addentry/{slug}
+    defaults:  { _controller: WeddingGuestBookBundle:Default:addentry }
+    
+admin:
+    pattern: /admin
+    defaults:  { _controller: WeddingAdminBundle:Admin:admin }
+
+addwedding:
+    path:     /admin/addwedding
+    defaults: { _controller: WeddingAdminBundle:Admin:addwedding }
+    
+login:
+    pattern: /login
+    defaults: { _controller: WeddingAdminBundle:Security:login }
+ 
+login_check:
+    pattern: /login_check
+ 
+logout:
+    pattern: /logout
+    
+adduser:
+    path:     /admin/adduser
+    defaults: { _controller: WeddingAdminBundle:Admin:adduser }
+
+adduser_create:
+    path:     /admin/adduser/create
+    defaults: { _controller: WeddingAdminBundle:Admin:adduser_create }

@@ -1,3 +1,18 @@
+fishrod_web:
+    resource: "@FishrodWebBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fishrod_admin:
+    resource: "@FishrodAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fishrod_wedding:
+    resource: "@FishrodWeddingBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

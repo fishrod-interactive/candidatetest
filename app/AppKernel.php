@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Fishrod\WebBundle\FishrodWebBundle(),
             new Fishrod\GuestBundle\FishrodGuestBundle(),
             new Fishrod\UserBundle\FishrodUserBundle(),
+            new Fishrod\MediaBundle\FishrodMediaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

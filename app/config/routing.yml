@@ -1,3 +1,8 @@
+fishrod_media:
+    resource: "@FishrodMediaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 fishrod_user:
     resource: "@FishrodUserBundle/Controller/"
     type:     annotation

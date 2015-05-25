@@ -39,25 +39,24 @@ class Guest
     protected $message;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="photo", type="string", length=255)
-     */
-    private $photo;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created", type="datetime")
      */
-    private $created;
+    protected $created;
 
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="Fishrod\WeddingBundle\Entity\Wedding", inversedBy="guests")
      * @ORM\JoinColumn(name="wedding_id", referencedColumnName="id")
      */
-    private $wedding;
+    protected $wedding;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Fishrod\MediaBundle\Entity\Photo")
+     * @ORM\JoinColumn(name="photo", referencedColumnName="id", nullable=true)
+     */
+    protected $photo;
 
 
     /**

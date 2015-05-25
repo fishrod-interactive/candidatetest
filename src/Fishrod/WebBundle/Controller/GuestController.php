@@ -3,6 +3,7 @@
 namespace Fishrod\WebBundle\Controller;
 
 use Fishrod\GuestBundle\Entity\Guest;
+use Fishrod\MediaBundle\Entity\Photo;
 use Fishrod\WebBundle\Form\GuestEntryType;
 use Fishrod\WeddingBundle\Entity\Wedding;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -36,6 +37,11 @@ class GuestController extends Controller
         if ($form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
+
+            // Handle File
+            $file = new Photo();
+            $guest->getPhoto()->upload();
+
             $em->persist($guest);
             $em->flush();
 

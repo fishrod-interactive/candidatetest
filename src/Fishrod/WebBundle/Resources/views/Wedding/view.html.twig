@@ -2,13 +2,8 @@
 
 {% block body -%}
     <h1>Wedding</h1>
-
     <table class="record_properties">
         <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ wedding.id }}</td>
-        </tr>
         <tr>
             <th>Name</th>
             <td>{{ wedding.name }}</td>
@@ -17,10 +12,8 @@
             <th>Address</th>
             <td>{{ wedding.address }}</td>
         </tr>
-        <tr>
-            <th>Slug</th>
-            <td>{{ wedding.slug }}</td>
-        </tr>
         </tbody>
     </table>
+    {{ render(controller('FishrodWebBundle:Guest:viewGuestMessagesWidget', {'wedding': wedding})) }}
+    {{ render(controller('FishrodWebBundle:Guest:createGuestEntry', {'wedding': wedding})) }}
 {% endblock %}

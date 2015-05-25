@@ -9,11 +9,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class HomepageController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
-     * @Template()
+     * @Route("/", name="homepage")
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return array('name' => $name);
+        return $this->render('homepage/index.html.twig');
     }
 }

@@ -1,6 +1,23 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
+    <div class="guests">
+        <span>Messages left by the guest</span>
+        {% if guests %}
+    {% for guest in guests %}
+        <div class="message">
 
+            <p>{{ guest.name }}</p>
+
+            <p>{{ guest.message }}</p>
+            {% if guest.photo %}
+                <img src="{{ guest.photo }}" alt=""/>
+            {% endif %}
+        </div>
+    {% endfor %}
+        {% else %}
+            <span>No messages</span>
+        {% endif %}
+    </div>
 {% endblock %}
 

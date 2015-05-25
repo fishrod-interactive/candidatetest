@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class WeddingRepository extends EntityRepository
 {
+    public function getLatestWeddings($maxResults = 20)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        return $qb
+            ->select('w, g')
+            ->from('FishrodWeddingBundle:Wedding', 'w')
+            ->leftJoin('w.guests', 'g')
+            ->orderBy('w.id', 'DESC')
+            ->setMaxResults($maxResults)
+            ->getQuery()->getArrayResult();
+    }
 }

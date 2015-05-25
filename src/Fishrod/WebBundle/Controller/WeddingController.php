@@ -25,4 +25,21 @@ class WeddingController extends Controller
             ['wedding' => $wedding]
         );
     }
+
+    /**
+     * @return array
+     */
+    public function viewLatestWeddingsAction()
+    {
+        $weddings = $this->getDoctrine()->getManager()
+            ->getRepository('FishrodWeddingBundle:Wedding')
+            ->getLatestWeddings();
+
+        return $this->render(
+            'FishrodWebBundle:Wedding:viewLatestWeddings.html.twig',
+            [
+                'weddings' => $weddings
+            ]
+        );
+    }
 }

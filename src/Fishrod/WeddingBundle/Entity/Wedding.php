@@ -2,7 +2,9 @@
 
 namespace Fishrod\WeddingBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Fishrod\GuestBundle\Entity\Guest;
 
 /**
  * Wedding
@@ -43,6 +45,18 @@ class Wedding
      */
     private $slug;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Fishrod\GuestBundle\Entity\Guest", mappedBy="wedding")
+     */
+    protected $guests;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->guests = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -121,5 +135,41 @@ class Wedding
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Remove guest
+     *
+     * @param Guest $guest
+     * @return Wedding
+     */
+    public function removeGuest(Guest $guest)
+    {
+        $this->guests->removeElement($guest);
+
+        return $this;
+    }
+
+    /**
+     * Get guests
+     *
+     * @return ArrayCollection
+     */
+    public function getGuests()
+    {
+        return $this->guests;
+    }
+
+    /**
+     * Add guest
+     *
+     * @param Guest $guest
+     * @return Wedding
+     */
+    public function addGuest(Guest $guest)
+    {
+        $this->guests[] = $guest;
+
+        return $this;
     }
 }

@@ -20,7 +20,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
 
             // Fishrod bundles
-            new AppBundle\AppBundle(),
             new Fishrod\WeddingBundle\FishrodWeddingBundle(),
             new Fishrod\AdminBundle\FishrodAdminBundle(),
             new Fishrod\WebBundle\FishrodWebBundle(),

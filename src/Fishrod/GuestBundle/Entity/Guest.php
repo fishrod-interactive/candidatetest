@@ -3,6 +3,7 @@
 namespace Fishrod\GuestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Fishrod\WeddingBundle\Entity\Wedding;
 
 /**
  * Guest
@@ -163,10 +164,10 @@ class Guest
     /**
      * Set wedding
      *
-     * @param integer $wedding
+     * @param Wedding $wedding
      * @return Guest
      */
-    public function setWedding($wedding)
+    public function setWedding(Wedding $wedding)
     {
         $this->wedding = $wedding;
 
@@ -176,7 +177,7 @@ class Guest
     /**
      * Get wedding
      *
-     * @return integer 
+     * @return Wedding
      */
     public function getWedding()
     {

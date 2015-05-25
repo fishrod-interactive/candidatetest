@@ -7,6 +7,7 @@ use Fishrod\WeddingBundle\Entity\Wedding;
 
 /**
  * Guest
+ * Anonymous user
  *
  * Table name convention: bundle_entity
  * @ORM\Table(name="guest_guest")

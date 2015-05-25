@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
 
             // Fishrod bundles
             new AppBundle\AppBundle(),
@@ -24,6 +25,7 @@ class AppKernel extends Kernel
             new Fishrod\AdminBundle\FishrodAdminBundle(),
             new Fishrod\WebBundle\FishrodWebBundle(),
             new Fishrod\GuestBundle\FishrodGuestBundle(),
+            new Fishrod\UserBundle\FishrodUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

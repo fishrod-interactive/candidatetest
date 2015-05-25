@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator: ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -63,6 +63,18 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Fishrod\UserBundle\Entity\User
+    # custom registration form
+    from_email:
+        address:        info@kYem.net
+        sender_name:    Admin
+    registration:
+        confirmation:
+            enabled:    false
 
 # Swiftmailer Configuration
 swiftmailer:

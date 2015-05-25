@@ -7,7 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Guest
  *
- * @ORM\Table()
+ * Table name convention: bundle_entity
+ * @ORM\Table(name="guest_guest")
  * @ORM\Entity(repositoryClass="Fishrod\GuestBundle\Entity\GuestRepository")
  */
 class Guest

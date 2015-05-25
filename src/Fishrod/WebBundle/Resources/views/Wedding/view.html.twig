@@ -15,5 +15,5 @@
         </tbody>
     </table>
     {{ render(controller('FishrodWebBundle:Guest:viewGuestMessagesWidget', {'wedding': wedding})) }}
-    {{ render(controller('FishrodWebBundle:Guest:createGuestEntry', {'wedding': wedding})) }}
+    <a href="{{ path('web_guest_create', {'id': wedding.id }) }}">Leave a Message</a>
 {% endblock %}

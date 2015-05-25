@@ -17,29 +17,31 @@ use Symfony\Component\HttpFoundation\Request;
 class GuestController extends Controller
 {
     /**
-     * @Route("/create")
+     * @Route("/create/{id}", name="web_guest_create")
      * @param Request $request
      * @param Wedding $wedding
      * @return array
      */
-    public function createGuestEntryAction(Request $request, Wedding $wedding)
+    public function createGuestEntryAction(Request $request, $id = null)
     {
         $guest = new Guest();
-        $form = $this->createForm(new GuestEntryType(), $guest);
+        $wedding = $this->getDoctrine()->getRepository('FishrodWeddingBundle:Wedding')
+            ->find($id);
+        $guest->setWedding($wedding);
 
-        $form->add('submit', 'submit', array('label' => 'Submit'));
+        $form = $this->createForm(new GuestEntryType(), $guest);
+        $form->add('submit', 'submit', array('label' => 'Create'));
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $guest->setWedding($wedding);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($guest);
             $em->flush();
 
             return $this->redirectToRoute(
-                'admin_wedding_view',
-                ['id' => $guest->getId()]
+                'fishrod_web_wedding_view',
+                ['slug' => $wedding->getSlug()]
             );
         }
 

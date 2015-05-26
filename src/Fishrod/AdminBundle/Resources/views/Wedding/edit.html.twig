@@ -4,13 +4,9 @@
     <h1>Wedding edit</h1>
 
     {{ form(edit_form) }}
+    {{ form(delete_form) }}
 
-    <ul class="list-group">
-        <li class="list-group-item">
-            <a href="{{ path('admin_wedding') }}">
-                Back to the list
-            </a>
-        </li>
-        <li class="list-group-item">{{ form(delete_form) }}</li>
-    </ul>
+    <a class="btn-default btn" href="{{ path('admin_wedding') }}">
+        Back to the list
+    </a>
 {% endblock %}

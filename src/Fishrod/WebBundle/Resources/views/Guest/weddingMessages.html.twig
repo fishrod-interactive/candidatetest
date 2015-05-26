@@ -1,17 +1,14 @@
 <div class="guests">
-    <span>Messages left by the guest</span>
     {% if guests %}
         {% for guest in guests %}
-            <div class="message">
-
-                <h3>{{ guest.name }}</h3>
-                <p>{{ guest.message }}</p>
-
+            <div class="col-xs-6 col-lg-4">
+                <h2>{{ guest.name }}</h2>
                 {% if guest.photo %}
                     <img src="/{{ guest.photo.getWebPath() }}"
                          class="img-responsive img-rounded" alt="Guest Photo"
                          width="304">
                 {% endif %}
+                <p>{{ guest.message }}</p>
             </div>
         {% endfor %}
     {% else %}

@@ -20,7 +20,7 @@ class GuestController extends Controller
     /**
      * @Route("/create/{id}", name="web_guest_create")
      * @param Request $request
-     * @param Wedding $wedding
+     * @param null $id
      * @return array
      */
     public function createGuestEntryAction(Request $request, $id = null)
@@ -35,13 +35,15 @@ class GuestController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-
             $em = $this->getDoctrine()->getManager();
 
             // Handle File
-            $file = new Photo();
-            $guest->getPhoto()->upload();
+            $photo = new Photo();
+            $photo->setFile($guest->getPhoto());
 
+            $guest->setPhoto($photo);
+
+            $em->persist($photo);
             $em->persist($guest);
             $em->flush();
 

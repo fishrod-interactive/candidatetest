@@ -21,12 +21,6 @@ class Photo
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     */
-    protected $name;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $path;

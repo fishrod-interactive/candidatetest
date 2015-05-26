@@ -17,7 +17,7 @@ class GuestEntryType extends AbstractType
         $builder
             ->add('name')
             ->add('message', 'textarea')
-            ->add('photo')
+            ->add('photo', 'file')
             ->add('created')
         ;
     }

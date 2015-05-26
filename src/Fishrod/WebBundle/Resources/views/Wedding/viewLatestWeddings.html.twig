@@ -1,17 +1,23 @@
 {% if weddings %}
-    <div class="weddings">
-        {% for wedding in weddings %}
-            <div class="single-wedding">
-                <a href="{{ path('fishrod_web_wedding_view', {'slug': wedding.slug}) }}">
+    <div class="row">
+    {% for wedding in weddings %}
+        <div class="col-md-4">
+            <h2><a href="{{ path('fishrod_web_wedding_view', {'slug': wedding.slug}) }}">
                     {{ wedding.name }}
-                </a>
-                <span>{{ wedding.address }}</span>
+                </a></h2>
+
+            <p>{{ wedding.address }}</p>
+
+            <div class="single-wedding">
                 {{ render(
                 controller('FishrodWebBundle:Guest:viewGuestMessagesWidget',
                 {'wedding': wedding}
                 )) }}
             </div>
-        {% endfor %}
+            <p><a class="btn btn-default" href="{{ path('fishrod_web_wedding_view', {'slug': wedding.slug}) }}"
+                  role="button">View details &raquo;</a></p>
+        </div>
+    {% endfor %}
     </div>
 {% else %}
     <div>No Weddings</div>

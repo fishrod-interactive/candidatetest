@@ -33,7 +33,7 @@ class WeddingController extends Controller
     {
         $weddings = $this->getDoctrine()->getManager()
             ->getRepository('FishrodWeddingBundle:Wedding')
-            ->getLatestWeddings();
+            ->getLatestWeddings(3);
 
         return $this->render(
             'FishrodWebBundle:Wedding:viewLatestWeddings.html.twig',

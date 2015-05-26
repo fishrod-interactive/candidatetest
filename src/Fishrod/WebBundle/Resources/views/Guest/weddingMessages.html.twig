@@ -8,7 +8,9 @@
 
                 <p>{{ guest.message }}</p>
                 {% if guest.photo %}
-                    <img src="/{{ guest.photo.getWebPath() }}" alt=""/>
+                    <img src="/{{ guest.photo.getWebPath() }}"
+                         class="img-rounded" alt="Guest Photo"
+                         width="304">
                 {% endif %}
             </div>
         {% endfor %}

@@ -1,4 +1,15 @@
 Fishrod Interactive: Candidate Test
+
+Test it:
+
+Run composer install
+Change database connection details in parameters file
+Run doctrine migrations to generate the database tables
+    - app/console doc:mi:mi
+    
+To test backend you need to register and account and and promote the user to admin role
+    - app/console fos:user:promote yourUserName ROLE_ADMIN 
+
 ===================================
 Instructions
 ------------

@@ -1,0 +1,44 @@
+fishrod_media:
+    resource: "@FishrodMediaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fishrod_user:
+    resource: "@FishrodUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fishrod_guest:
+    resource: "@FishrodGuestBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fishrod_web:
+    resource: "@FishrodWebBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fishrod_admin:
+    resource: "@FishrodAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fishrod_wedding:
+    resource: "@FishrodWeddingBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile

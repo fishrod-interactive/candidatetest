@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="jumbotron">
+        <h1>Wedding {{ wedding.name }}!</h1>
+
+        <p>Wedding Address: {{ wedding.address }}</p>
+        <a class="btn btn-success" href="{{ path('web_guest_create', {'id': wedding.id }) }}">Leave a Message</a>
+    </div>
+    {{ render(controller('FishrodWebBundle:Guest:viewGuestMessagesWidget', {'wedding': wedding})) }}
+{% endblock %}

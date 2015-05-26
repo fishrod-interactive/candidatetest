@@ -2,6 +2,7 @@
 
 namespace Fishrod\GuestBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Fishrod\WeddingBundle\Entity\Wedding;
 
@@ -39,7 +40,7 @@ class Guest
     protected $message;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      *
      * @ORM\Column(name="created", type="datetime")
      */
@@ -58,6 +59,11 @@ class Guest
      */
     protected $photo;
 
+
+    public function __construct()
+    {
+        $this->created = new DateTime();
+    }
 
     /**
      * Get id
@@ -141,7 +147,7 @@ class Guest
     /**
      * Set created
      *
-     * @param \DateTime $created
+     * @param DateTime $created
      * @return Guest
      */
     public function setCreated($created)
@@ -154,7 +160,7 @@ class Guest
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return DateTime
      */
     public function getCreated()
     {

@@ -4,5 +4,6 @@
     <div class="jumbotron">
         <h1>Check out the latest weddings!</h1>
     </div>
-    {{ render(controller('FishrodWebBundle:Wedding:viewLatestWeddings')) }}
+    {{ render(controller('FishrodWebBundle:Wedding:viewLatestWeddings',
+        {'weddingNumber' : 3})) }}
 {% endblock %}

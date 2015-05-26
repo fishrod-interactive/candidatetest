@@ -27,16 +27,37 @@ class WeddingController extends Controller
     }
 
     /**
+     * @Route("/view/latest/{weddingNumber}")
+     * @param int $weddingNumber
      * @return array
      */
-    public function viewLatestWeddingsAction()
+    public function viewLatestWeddingsAction($weddingNumber = 20)
     {
         $weddings = $this->getDoctrine()->getManager()
             ->getRepository('FishrodWeddingBundle:Wedding')
-            ->getLatestWeddings(3);
+            ->getLatestWeddings($weddingNumber);
 
         return $this->render(
             'FishrodWebBundle:Wedding:viewLatestWeddings.html.twig',
+            [
+                'weddings' => $weddings
+            ]
+        );
+    }
+
+    /**
+     * @Route("/latest")
+     * @param int $weddingNumber
+     * @return array
+     */
+    public function viewLatestAction($weddingNumber = 20)
+    {
+        $weddings = $this->getDoctrine()->getManager()
+            ->getRepository('FishrodWeddingBundle:Wedding')
+            ->getLatestWeddings($weddingNumber);
+
+        return $this->render(
+            'FishrodWebBundle:Wedding:viewLatest.html.twig',
             [
                 'weddings' => $weddings
             ]

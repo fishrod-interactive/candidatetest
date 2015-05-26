@@ -1,0 +1,7 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {{ render(controller('FishrodWebBundle:Wedding:viewLatestWeddings',
+    {'weddingNumber' : 40})) }}
+{% endblock %}
+

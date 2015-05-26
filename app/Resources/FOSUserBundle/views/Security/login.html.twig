@@ -29,5 +29,12 @@
             <input class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit"
                    value="{{ 'security.login.submit'|trans }}"/>
         </form>
+        <div class="form-signin">
+            <h3>Don't have and account?</h3>
+            <a class="btn btn-primary"
+               href="{{ path('fos_user_registration_register') }}">
+                {{ 'layout.register'|trans({}, 'FOSUserBundle') }}
+            </a>
+        </div>
     {% endblock fos_user_content %}
 {% endblock body %}

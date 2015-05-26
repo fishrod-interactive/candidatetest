@@ -1,7 +1,7 @@
 <div class="guests">
     {% if guests %}
         {% for guest in guests %}
-            <div class="col-xs-6 col-lg-4">
+            <div class="col-lg-12">
                 <h2>{{ guest.name }}</h2>
                 {% if guest.photo %}
                     <img src="/{{ guest.photo.getWebPath() }}"

@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>Wedding list</h1>
 
-    <table class="records_list">
+    <table class="records_list table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -21,25 +21,19 @@
                 <td>{{ entity.address }}</td>
                 <td>{{ entity.slug }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('admin_wedding_view', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('admin_wedding_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                <a href="{{ path('admin_wedding_view', { 'id': entity.id }) }}">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                </a>
+                <a href="{{ path('admin_wedding_edit', { 'id': entity.id }) }}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('admin_wedding_create') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+    <a class="btn btn-default" href="{{ path('admin_wedding_create') }}">
+        Create a new entry
+    </a>
     {% endblock %}

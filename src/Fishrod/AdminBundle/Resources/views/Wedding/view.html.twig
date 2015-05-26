@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>Wedding</h1>
 
-    <table class="record_properties">
+    <table class="record_properties table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -23,18 +23,17 @@
             </tr>
         </tbody>
     </table>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('admin_wedding') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('admin_wedding_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <div class="row">
+        <div class="col-sm-6">
+            <a class="btn btn-default" href="{{ path('admin_wedding') }}">
+                Back to the list
+            </a>
+            <a class="btn btn-default" href="{{ path('admin_wedding_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+            <div class="col-sm-4" style="display: inline-block">
+                {{ form(delete_form) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

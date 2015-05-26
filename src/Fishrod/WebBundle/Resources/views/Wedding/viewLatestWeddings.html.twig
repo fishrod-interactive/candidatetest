@@ -1,23 +1,19 @@
-{% extends '::base.html.twig' %}
-
-{% block body %}
-    {% if weddings %}
-        <div class="weddings">
-            {% for wedding in weddings %}
-                <div class="single-wedding">
-                    <a href="{{ path('fishrod_web_wedding_view', {'slug': wedding.slug}) }}">
-                        {{ wedding.name }}
-                    </a>
-                    <span>{{ wedding.address }}</span>
-                    {{ render(
-                        controller('FishrodWebBundle:Guest:viewGuestMessagesWidget',
-                        {'wedding': wedding}
-                    )) }}
-                </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <div>No Weddings</div>
-    {% endif %}
-{% endblock %}
+{% if weddings %}
+    <div class="weddings">
+        {% for wedding in weddings %}
+            <div class="single-wedding">
+                <a href="{{ path('fishrod_web_wedding_view', {'slug': wedding.slug}) }}">
+                    {{ wedding.name }}
+                </a>
+                <span>{{ wedding.address }}</span>
+                {{ render(
+                controller('FishrodWebBundle:Guest:viewGuestMessagesWidget',
+                {'wedding': wedding}
+                )) }}
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div>No Weddings</div>
+{% endif %}
 
